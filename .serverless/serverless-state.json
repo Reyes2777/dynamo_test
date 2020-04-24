@@ -10,7 +10,7 @@
       "name": "aws",
       "runtime": "python3.7",
       "region": "us-east-2",
-      "profile": "default",
+      "profile": "jhonson",
       "iamRoleStatements": [
         {
           "Effect": "Allow",
@@ -178,7 +178,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/dynamo-test/master/1587689747180-2020-04-24T00:55:47.180Z/dynamo-test.zip"
+                "S3Key": "serverless/dynamo-test/master/1587751677193-2020-04-24T18:07:57.193Z/dynamo-test.zip"
               },
               "FunctionName": "dynamo-test-master-main",
               "Handler": "handler.main",
@@ -200,14 +200,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "MainLambdaVersion6oWzPxTkVmMkh6DXbL2RNNKCwkfIdqB4rChsVvaSH1Y": {
+          "MainLambdaVersionG6LOl5sX5RrpjtxIg6Wi7ZVYytbJv7s9Kz1cNc9buC8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "MainLambdaFunction"
               },
-              "CodeSha256": "m6q3OV/m47icrJfS/Zyj3R2Hi7hWjevF+nAUYwQ+QB8="
+              "CodeSha256": "x8Ft1VNrZMJ+vcb5adOGwo3hqMGTqonYeUW2a0eaGig="
             }
           },
           "ApiGatewayRestApi": {
@@ -280,7 +280,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1587689727162": {
+          "ApiGatewayDeployment1587751553565": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -339,7 +339,7 @@
           "MainLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "MainLambdaVersion6oWzPxTkVmMkh6DXbL2RNNKCwkfIdqB4rChsVvaSH1Y"
+              "Ref": "MainLambdaVersionG6LOl5sX5RrpjtxIg6Wi7ZVYytbJv7s9Kz1cNc9buC8"
             }
           },
           "ServiceEndpoint": {
@@ -473,16 +473,16 @@
         "memory": 128,
         "runtime": "python3.7",
         "vpc": {},
-        "versionLogicalId": "MainLambdaVersion6oWzPxTkVmMkh6DXbL2RNNKCwkfIdqB4rChsVvaSH1Y"
+        "versionLogicalId": "MainLambdaVersionG6LOl5sX5RrpjtxIg6Wi7ZVYytbJv7s9Kz1cNc9buC8"
       }
     },
     "serviceFilename": "serverless.yml",
     "layers": {},
     "isDashboardMonitoringPreconfigured": false,
-    "artifact": "/Users/jonathan/dynamo_test/.serverless/dynamo-test.zip"
+    "artifact": "/Users/jonathan/dynamo_test/dynamo_test/.serverless/dynamo-test.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/dynamo-test/master/1587689747180-2020-04-24T00:55:47.180Z",
+    "artifactDirectoryName": "serverless/dynamo-test/master/1587751677193-2020-04-24T18:07:57.193Z",
     "artifact": "dynamo-test.zip"
   }
 }
