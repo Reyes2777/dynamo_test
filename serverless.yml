@@ -2,18 +2,22 @@ service: dynamo-test
 
 provider:
   name: aws
-  runtime: python3.8
-  stage: master
-  region: us-east-1
+  runtime: python3.7
+  region: us-east-2
+  stage: ${file(.env.yml):ENVIRONMENT}
+  profile: ${file(.env.yml):PROFILE}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:GetItem
+        - dynamodb:Scan
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+      Resource:
+        Resource: "arn:aws:dynamodb:us-east-2:798327857257:table/desempenoacademico"
 
-iamRoleStatements:
-  - Effect: "Allow"
-    Action:
-      - dynamodb:DescribeTable
-      - dynamodb:Query
-      - dynamodb:GetItem
-      - dynamodb:Scan
-    Resource: "arn:aws:dynamodb:us-east-2:798327857257:table/desempenoacademico"
 custom:
   pythonRequirements:
     fileName: requirements.txt
@@ -21,7 +25,7 @@ custom:
     slim: true
     slimPatterns:
       - "*.dist-info"
-  stageEnv: master
+  stageEnv: ${file(.env.yml):${self:provider.stage}}
 
 package:
   exclude:
@@ -52,6 +56,8 @@ functions:
     handler: handler.main
     timeout: 30
     memorySize: 128
+    environment:
+      AWS_REGION: ${self:custom.stageEnv.AWS_REGION}
     events:
       - http:
           path: desempenoacademico
@@ -59,4 +65,4 @@ functions:
 
 plugins:
   - serverless-python-requirements
-  - serverless-offline
+
