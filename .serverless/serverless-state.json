@@ -178,7 +178,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/dynamo-test/master/1587689508535-2020-04-24T00:51:48.535Z/dynamo-test.zip"
+                "S3Key": "serverless/dynamo-test/master/1587689747180-2020-04-24T00:55:47.180Z/dynamo-test.zip"
               },
               "FunctionName": "dynamo-test-master-main",
               "Handler": "handler.main",
@@ -280,7 +280,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1587689489221": {
+          "ApiGatewayDeployment1587689727162": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -482,7 +482,7 @@
     "artifact": "/Users/jonathan/dynamo_test/.serverless/dynamo-test.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/dynamo-test/master/1587689508535-2020-04-24T00:51:48.535Z",
+    "artifactDirectoryName": "serverless/dynamo-test/master/1587689747180-2020-04-24T00:55:47.180Z",
     "artifact": "dynamo-test.zip"
   }
 }
